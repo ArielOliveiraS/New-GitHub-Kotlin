@@ -5,7 +5,5 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 class Owner(
     val avatar_url: String,
-    val login: String,
-    val followers_url: String,
-    val following_url: String
+    val login: String
 ): Parcelable

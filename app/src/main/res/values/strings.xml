@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AppGitHub</string>
+    <string name="error_message">Verifique sua conexão com a internet</string>
+    <string name="error_message_title">Algo deu errado.</string>
 </resources>

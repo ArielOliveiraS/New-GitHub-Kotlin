@@ -21,16 +21,12 @@ class RepositoryViewModel(private val repository: RepositoryViewContract) : View
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                setItemList(it)
+                repositoriesList.value = it
             }, { throwable ->
                 Throwable(throwable)
                 Log.i("erro", "meus repositorios erro")
             })
 
-    }
-
-    fun setItemList(it: MutableList<Repository>) {
-        repositoriesList.value = it
     }
 
     class Factory : ViewModelProvider.Factory {

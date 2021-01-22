@@ -33,10 +33,10 @@ class GitHubViewModel (private val repository: RepositoryViewContract) : ViewMod
             .subscribe({
                 setItemList(it)
                 setError(false)
-            }, { throwable ->
+            }) { throwable ->
                 Throwable(throwable)
                 setError(true)
-            })
+            }
 
     }
 

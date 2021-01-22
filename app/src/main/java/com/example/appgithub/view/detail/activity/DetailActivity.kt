@@ -58,7 +58,7 @@ class DetailActivity : AppCompatActivity() {
         when (item.itemId) {
             android.R.id.home -> {
                 startActivity(Intent(this, MainActivity::class.java))
-                finishActivity(0)
+                finish()
             }
         }
         return true

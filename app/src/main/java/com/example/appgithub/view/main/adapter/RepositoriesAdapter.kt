@@ -10,7 +10,7 @@ import com.example.appgithub.view.main.interfaces.ClickViewContract
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_recycler_view.view.*
 
-class RepositoriesAdapter (var repositoryList: MutableList<Item>, val listener: ClickViewContract) :
+class RepositoriesAdapter (var repositoryList: MutableList<Item>, private val listener: ClickViewContract) :
     RecyclerView.Adapter<RepositoriesAdapter.ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
