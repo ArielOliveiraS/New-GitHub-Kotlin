@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appgithub.R
 import com.example.appgithub.model.Item
-import com.example.appgithub.view.main.adapter.RepositoriesAdapter
 import com.example.appgithub.view.detail.activity.DetailActivity
+import com.example.appgithub.view.main.adapter.RepositoriesAdapter
 import com.example.appgithub.view.main.interfaces.ClickViewContract
 import com.example.appgithub.viewmodel.GitHubViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -94,7 +94,7 @@ class MainActivity() : AppCompatActivity(), ClickViewContract {
 
     private fun errorClick(action: () -> Unit) {
         genericErrorView?.setOnClickListener {
-            action?.invoke()
+            action.invoke()
             genericErrorImageView?.rotate()
         }
     }
@@ -110,4 +110,5 @@ class MainActivity() : AppCompatActivity(), ClickViewContract {
         intent.putExtra("result", result)
         startActivity(intent)
     }
+
 }

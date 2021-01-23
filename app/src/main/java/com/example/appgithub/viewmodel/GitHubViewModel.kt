@@ -8,14 +8,17 @@ import com.example.appgithub.data.repository.ItemRepository
 import com.example.appgithub.data.repository.RepositoryViewContract
 import com.example.appgithub.model.GitHubResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 /**
  * Created by arieloliveira on 08/01/21 for AppGitHub.
  */
 class GitHubViewModel (private val repository: RepositoryViewContract) : ViewModel() {
-    private val repositoriesList: MutableLiveData<GitHubResponse> = MutableLiveData()
 
+     var disposables = HashSet<Disposable>()
+
+    private val repositoriesList: MutableLiveData<GitHubResponse> = MutableLiveData()
     val repositorytResult: LiveData<GitHubResponse> = repositoriesList
 
     private val loading: MutableLiveData<Boolean> = MutableLiveData()
@@ -36,7 +39,7 @@ class GitHubViewModel (private val repository: RepositoryViewContract) : ViewMod
             }) { throwable ->
                 Throwable(throwable)
                 setError(true)
-            }
+            }.run { disposables.add(this) }
 
     }
 

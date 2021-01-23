@@ -31,7 +31,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/xvery_large_margin"
-        android:textSize="@dimen/medium_text"
+        android:textSize="@dimen/xlarge_text"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/userAvatarView"
         app:layout_constraintStart_toEndOf="@+id/userAvatarView"
         app:layout_constraintTop_toTopOf="@+id/userAvatarView"
@@ -49,5 +50,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userAvatarView" />
 
+    <ProgressBar
+        android:id="@+id/detailProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.603"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
